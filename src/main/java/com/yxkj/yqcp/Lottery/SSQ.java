@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -22,8 +24,6 @@ public class SSQ {
         int height = driver.manage().window().getSize().height;
         System.out.println(width );
         System.out.println(height);
-
-
         return true;
     }
 }
