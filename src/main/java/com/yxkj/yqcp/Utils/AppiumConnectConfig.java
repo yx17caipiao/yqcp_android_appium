@@ -17,6 +17,7 @@ import io.appium.java_client.ios.IOSDriver;
 public class AppiumConnectConfig  {
 
     AndroidDriver driver;
+//    AppiumDriver driver;
     public AndroidDriver Connect(String deviceName) throws Exception{
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("deviceName",deviceName);
@@ -29,6 +30,7 @@ public class AppiumConnectConfig  {
         cap.setCapability("unicodeKeyboard", true);
         cap.setCapability("resetKeyboard", true);
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+//        driver.findElementByXPath("//android.widget.TextView[@text='birthdaypresent']").click();
         return driver;
     }
 

@@ -33,7 +33,7 @@ public class TestMain {
         acc.closeConnect();
     }
 
-    public void star( AndroidDriver driver){
+    public void star( AndroidDriver driver) throws Exception{
         SSQ ssq = new SSQ();
         ssq.Shop(driver);
     }
