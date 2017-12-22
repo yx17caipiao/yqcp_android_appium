@@ -30,7 +30,6 @@ public class AppiumConnectConfig  {
         cap.setCapability("unicodeKeyboard", true);
         cap.setCapability("resetKeyboard", true);
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
-//        driver.findElementByXPath("//android.widget.TextView[@text='birthdaypresent']").click();
         return driver;
     }
 
