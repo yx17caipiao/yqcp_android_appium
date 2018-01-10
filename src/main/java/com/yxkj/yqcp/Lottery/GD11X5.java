@@ -1,5 +1,6 @@
 package com.yxkj.yqcp.Lottery;
 
+import com.yxkj.yqcp.Other.Login;
 import com.yxkj.yqcp.Utils.ToolUtil;
 
 import org.openqa.selenium.By;
@@ -10,25 +11,12 @@ import java.util.List;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
- * Created by u on 2017/12/20.
+ * Created by u on 2018/1/5.
  */
 
-public class DLT {
+public class GD11X5 {
     public boolean Shop(AndroidDriver driver) throws Exception{
-        //        driver.findElement(By.id("rl_select_by_phone")).click();
-//        driver.findElementByXPath("//android.widget.TextView[@text='birthdaypresent']").click();
-//        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"birthdaypresent\")").click();
-//        Assert.assertTrue(driver.findElement(By.name("首页")).isDisplayed());
-//        driver.findElementByLinkText("birthdaypresent").click();
-//        driver.swipe(width / 2, width * 9 / 10 , width / 2, height / 10, 1000);
-        if(ToolUtil.DeviceType == 2){
-
-        }
-        int width = driver.manage().window().getSize().width;
-        int height = driver.manage().window().getSize().height;
-        driver.swipe(width / 2, width * 9 / 10 , width / 2, height / 10, 1000);
-        //大乐透
-        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"大乐透\")").click();
+        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"广东11选5\")").click();
         //选号页面机选
         driver.findElement(By.id("rl_select_by_phone")).click();
         //click跳转至投注单页面
@@ -48,8 +36,25 @@ public class DLT {
         Thread.sleep(2500);
         //click左上角返回 返回至首页
         driver.findElement(By.id("ll_back")).click();
+        ToolUtil.log.info("广东11选5---Success");
+        return true;
+    }
 
-        ToolUtil.log.info("大乐透---Success");
+    public boolean ShopRX2(AndroidDriver driver) throws Exception{
+        ToolUtil.SwipeTool(driver);
+        ToolUtil.SwipeTool(driver);
+        ToolUtil.SwipeTool(driver);
+        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"广东11选5\")").click();
+
+        driver.findElement(By.id("tv_title")).click();
+        Thread.sleep(3000);
+//        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"奖金65元\")").click();
+//        List<WebElement> check_red = driver.findElements(By.id("check_red"));
+        List<WebElement> layout = driver.findElements(By.id("layout"));
+//        System.out.println("check_red_size:"+check_red.size());
+        System.out.println("layout_size:"+layout.size());
+//        check_red.get(0).click();
+//        layout.get(0).click();
         return true;
     }
 }

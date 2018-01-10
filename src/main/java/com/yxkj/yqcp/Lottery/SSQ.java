@@ -49,6 +49,7 @@ public class SSQ {
         }
         //click确定 跳转至支付页面
         driver.findElement(By.id("btn_sure")).click();
+        //登录页面
         Login.login(driver);
         //click确定 跳转至支付页面
         driver.findElement(By.id("btn_sure")).click();
@@ -58,6 +59,18 @@ public class SSQ {
         //click左上角返回 返回至首页
         driver.findElement(By.id("ll_back")).click();
 //        driver.startActivity("com.yxkj.yqcp",".ui.MainActivity");
+        ToolUtil.log.info("双色球---Success");
+        return true;
+    }
+
+    public boolean ShopDT(AndroidDriver driver) throws Exception{
+        int width = driver.manage().window().getSize().width;
+        int height = driver.manage().window().getSize().height;
+        driver.swipe(width / 2, width * 9 / 10 , width / 2, height / 10, 1000);
+        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"双色球\")").click();
+        driver.findElement(By.id("tv_title")).click();
+//        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"胆拖选号\")").click();
+        driver.findElement(By.id("tv_num_blue")).click();
 
         return true;
     }
