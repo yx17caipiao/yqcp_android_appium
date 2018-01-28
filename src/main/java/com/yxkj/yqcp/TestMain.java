@@ -52,7 +52,17 @@ public class TestMain {
 //        });
     }
 
-    public void star( AndroidDriver driver){
+    /*
+        目前缺陷：
+        1.首页点击彩种的问题：目前的解决方案是 固定彩种位置后滑动到该彩种 然后点击该彩种
+          缺陷是：彩种位置不能改变，一旦改变彩种位置就可能无法找到对应彩种
+          需要优化成：自动滑动查找对应彩种
+        2.投注页面切换玩法的问题： 无法点击到玩法切换弹层上面的元素(玩法：任选五)
+          目前的解决方案是 根据坐标定位 点击弹层上面的玩法 从而实现玩法的切换
+          缺陷是：一旦更换设备，由于分辨率的改变 坐标会不准 可能无法点击到对应的玩法
+          需要优化成：能直接点击到弹层上面的玩法
+     */
+    public void star( AndroidDriver driver) throws Exception {
         boolean isR = true;
         //双色球
         SSQ ssq = new SSQ();
@@ -89,10 +99,13 @@ public class TestMain {
 //            ToolUtil.log.info("大乐透购彩没跑通！！！");
 //            isR = false;
 //        }
+        gd11x5.Shop(driver,"ALL");
         try {
             //广东11选5基本购彩流程
-//            gd11x5.Shop(driver);
-            gd11x5.ShopRX2(driver);
+            gd11x5.Shop(driver,"RX7");
+//            gd11x5.ShopRX2(driver);
+//            gd11x5.ShopRX3(driver);
+//            driver.tap(1,570,450,100);
         } catch (Exception e) {
             // TODO: handle exception
             ToolUtil.log.info("广东11选5购彩没跑通！！！");
