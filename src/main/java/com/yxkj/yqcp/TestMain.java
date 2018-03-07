@@ -31,7 +31,7 @@ public class TestMain {
     public static void main(String[] args) throws Exception{
         final AndroidDriver driver;
         AppiumConnectConfig acc = new AppiumConnectConfig();
-        //    127.0.0.1:6555  b8b4f2271f583 emulator-5554
+        //    127.0.0.1:6555  b8b4f2271f583 emulator-5554   80SQBDQL226ST
         driver = acc.Connect("127.0.0.1:6555");
         Thread.sleep(4000);
         TestMain tm = new TestMain();
@@ -63,6 +63,10 @@ public class TestMain {
           需要优化成：能直接点击到弹层上面的玩法
      */
     public void star( AndroidDriver driver) throws Exception {
+
+//        driver.scr
+        driver.findElementByAndroidUIAutomator("new UiSelector().text(\"广东11选5\")").click();
+
         boolean isR = true;
         //双色球
         SSQ ssq = new SSQ();
@@ -99,10 +103,10 @@ public class TestMain {
 //            ToolUtil.log.info("大乐透购彩没跑通！！！");
 //            isR = false;
 //        }
-        gd11x5.Shop(driver,"ALL");
+//        gd11x5.Shop(driver,"ALL");
         try {
             //广东11选5基本购彩流程
-            gd11x5.Shop(driver,"RX7");
+//            gd11x5.Shop(driver,"RX7");
 //            gd11x5.ShopRX2(driver);
 //            gd11x5.ShopRX3(driver);
 //            driver.tap(1,570,450,100);
